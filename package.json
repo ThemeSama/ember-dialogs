@@ -1,5 +1,5 @@
 {
-  "name": "ember-dialogs",
+  "name": "@themesama/ember-dialogs",
   "version": "1.1.0",
   "description": "Customizable implementation of `alert`, `confirm` and `prompt` modal dialogs with straightforward API",
   "keywords": [
@@ -22,7 +22,10 @@
     "doc": "doc",
     "test": "tests"
   },
-  "repository": "lolmaus/ember-dialogs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ThemeSama/ember-dialogs"
+  },
   "scripts": {
     "build": "ember build",
     "start": "ember serve",
@@ -36,7 +39,6 @@
     "liquid-tether": "^2.0.6"
   },
   "devDependencies": {
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "broccoli-asset-rev": "^2.4.5",
     "ember-ajax": "^3.0.0",
     "ember-cli": "~2.18.0-beta.1",
