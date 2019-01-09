@@ -43,6 +43,7 @@ export default function component (scope = "", descriptor = {}) {
   }
 
   return {
+    //...(scope ? { scope, itemScope : scope } : {}), // inject the scope only if it was provided
     $                : jquery($el => $el),
     attribute        : attribute(),
     blur             : jquery($el => $el.blur()),
@@ -68,7 +69,9 @@ export default function component (scope = "", descriptor = {}) {
       event.which = code
       event.keyCode = code
       return this.$.trigger(event)
-    }
+    },
+
+    //...descriptor,
   }
 }
 

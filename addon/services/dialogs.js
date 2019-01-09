@@ -41,10 +41,10 @@ export default Service.extend({
 
 
   // ----- Methods -----
-  dialog (params) {
+  dialog (params, type) {
+    //
     const {
       message,
-      type,
 
       actionOk,
       labelOk = 'OK',
@@ -61,6 +61,7 @@ export default Service.extend({
 
       blockScrolling    = true,
     } = params
+
 
     const userActionDeferred = RSVP.defer(`ember-dialogs: ${message}`)
 
@@ -90,24 +91,15 @@ export default Service.extend({
   },
 
   alert (params) {
-    return this.dialog({
-      ...params,
-      type : 'alert',
-    })
+    return this.dialog(params, 'alert')
   },
 
   confirm (params) {
-    return this.dialog({
-      ...params,
-      type : 'confirm',
-    })
+    return this.dialog(params, 'confirm')
   },
 
   prompt (params) {
-    return this.dialog({
-      ...params,
-      type : 'prompt',
-    })
+    return this.dialog(params, 'prompt')
   },
 
   reset () {

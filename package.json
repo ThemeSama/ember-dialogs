@@ -1,6 +1,6 @@
 {
-  "name": "@themesama/ember-dialogs",
-  "version": "1.1.0",
+  "name": "ember-dialogs",
+  "version": "1.1.2",
   "description": "Customizable implementation of `alert`, `confirm` and `prompt` modal dialogs with straightforward API",
   "keywords": [
     "ember-addon",
@@ -41,7 +41,7 @@
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.5",
     "ember-ajax": "^3.0.0",
-    "ember-cli": "~2.18.0-beta.1",
+    "ember-cli": "~3.0.0",
     "ember-cli-chai": "^0.4.3",
     "ember-cli-dependency-checker": "^2.1.0",
     "ember-cli-deploy": "^1.0.2",
@@ -62,7 +62,7 @@
     "ember-fork-me": "^1.0.1",
     "ember-load-initializers": "^1.0.0",
     "ember-resolver": "^4.0.0",
-    "ember-source": "~2.18.0-beta.1",
+    "ember-source": "~3.0.0",
     "eslint": "^4.6.1",
     "eslint-config-standard": "^10.2.1",
     "eslint-plugin-ember": "^5.0.0",
@@ -78,5 +78,9 @@
   "ember-addon": {
     "configPath": "tests/dummy/config",
     "demoURL": "https://lolmaus.github.io/ember-dialogs/"
+  },
+  "publishConfig": {
+    "registry": "https://repo.muhasebat.gov.tr/repository/maliye-npm/",
+    "always-auth": true
   }
 }
