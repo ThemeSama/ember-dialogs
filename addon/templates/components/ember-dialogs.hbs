@@ -1,26 +1,26 @@
 {{#if (and dialogs.type dialogs.backdrop)}}
   {{liquid-wormhole
-    stack = 'ember-dialogs-backdrop'
+    stack = "ember-dialogs-backdrop"
     click = (action dialogs.actionBackdropWrapped)
 
     class = (concat
-      'ember-dialogs-backdrop '
-      (if dialogs.backdropClickable '-ember-dialogs-clickable ' '')
+      "ember-dialogs-backdrop "
+      (if dialogs.backdropClickable "-ember-dialogs-clickable " "")
     )
   }}
-{{/if}}{{! and dialogs.type dialogs.backdrop }}
+{{/if}}
 
 
 
 {{#if dialogs.type}}
   {{#liquid-tether
-    stack = 'ember-dialogs-dialogTether'
-    class = 'ember-dialogs-dialogTether'
-    value = 'alert'
+    stack = "ember-dialogs-dialogTether"
+    class = "ember-dialogs-dialogTether"
+    value = "alert"
 
-    target         = 'document.body'
-    targetModifier = 'visible'
-    attachment     = 'middle center'
+    target         = "document.body"
+    targetModifier = "visible"
+    attachment     = "middle center"
   }}
     {{#if hasBlock}}
       {{yield (hash
@@ -35,9 +35,9 @@
         cancelVisible = dialogs.cancelVisible
 
         shouldDisplayCancel = (or
-          (eq dialogs.type 'confirm')
+          (eq dialogs.type "confirm")
           (and
-            (eq dialogs.type 'prompt')
+            (eq dialogs.type "prompt")
             dialogs.cancelVisible
           )
         )
@@ -49,18 +49,18 @@
         userInput   = dialogs.userInput
         placeholder = dialogs.placeholder
       )}}
-    {{else}}{{! hasBlock }}
+    {{else}}
       <div class = "ember-dialogs-dialog">
 
         {{#if dialogs.message}}
           <div class = "ember-dialogs-dialog-message">
             {{dialogs.message}}
-          </div>{{! ember-dialogs-dialog-message }}
-        {{/if}}{{! dialogs.message }}
+          </div>
+        {{/if}}
 
-        {{#if (eq dialogs.type 'prompt')}}
+        {{#if (eq dialogs.type "prompt")}}
           {{input
-            class       = 'ember-dialogs-dialog-input'
+            class       = "ember-dialogs-dialog-input"
             value       = dialogs.userInput
             placeholder = dialogs.placeholder
             enter       = (action dialogs.actionOkWrapped dialogs.userInput)
@@ -76,9 +76,9 @@
           </button>
 
           {{#if (or
-            (eq dialogs.type 'confirm')
+            (eq dialogs.type "confirm")
             (and
-              (eq dialogs.type 'prompt')
+              (eq dialogs.type "prompt")
               dialogs.cancelVisible
             )
           )}}
@@ -89,8 +89,8 @@
               {{dialogs.labelCancel}}
             </button>
           {{/if}}
-        </div>{{! ember-dialogs-dialog-buttons }}
-      </div>{{! ember-dialogs-dialog }}
-    {{/if}}{{! hasBlock }}
+        </div>
+      </div>
+    {{/if}}
   {{/liquid-tether}}
-{{/if}}{{! dialogs.type }}
+{{/if}}
